@@ -1,0 +1,4 @@
+# PyMuPDF is AGPL-3.0 licensed; it is installed by the user, not bundled here.
+pymupdf>=1.23
+# optional: shrinks embedded figure images
+pillow>=9

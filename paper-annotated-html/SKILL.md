@@ -1,6 +1,10 @@
 ---
 name: paper-annotated-html
 description: 把一篇学术论文（PDF）做成单个双栏批注精读 HTML：左栏是英文原文（按五类论证维度彩色高亮）加段下的中文意译，右栏是逐段中文批注（段落功能、逻辑角色、论证技巧或漏洞），底部是论证结构总览（逻辑骨架、一句话主张、最强处与最弱处）。用户给出论文 PDF 并提到精读、批注、双栏、论证结构、逐段分析、中英对照、论文翻译成网页、读书报告或课程阅读材料时，都要使用此技能；用户说 "annotate this paper"、"bilingual close reading" 或只说"帮我读这篇论文并做成 HTML"时也用。支持人文论证型、实证型、工程设计验证型三套维度。
+license: MIT
+metadata:
+  version: "0.1.0"
+  repository: https://github.com/SHENAO1/paper-annotated-html
 ---
 
 # 论文双栏批注 HTML
@@ -56,7 +60,7 @@ description: 把一篇学术论文（PDF）做成单个双栏批注精读 HTML�
 
 这四份参考文件在开始第一批批注前读一遍即可，之后每批不必重读。
 
-依赖 Python 3.9+、`pymupdf`，以及可选的 `pillow`（用于压缩图片）。缺少时执行 `pip install pymupdf pillow`。Windows 下脚本会自动把输出设为 UTF-8。
+依赖 Python 3.9+、`pymupdf`，以及可选的 `pillow`（用于压缩图片）。缺少时执行 `pip install -r $SKILL/requirements.txt`。Windows 下脚本会自动把输出设为 UTF-8。
 
 ## 工作流程
 

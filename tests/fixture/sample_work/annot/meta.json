@@ -1,0 +1,73 @@
+{
+  "profile": "design",
+  "title_zh": "一种自适应死区控制的示例变换器",
+  "course": "",
+  "glossary": [
+    {
+      "term": "dead time",
+      "aliases": [],
+      "zh": "死区时间",
+      "def": "上下管同时关断的间隔。"
+    }
+  ],
+  "overview": {
+    "skeleton": {
+      "problem": {
+        "text": "固定死区在轻载时让体二极管导通过久，白白损耗能量。",
+        "refs": [
+          "S1.P1"
+        ]
+      },
+      "claim": {
+        "text": "逐周期缩短死区可以提高效率。",
+        "refs": [
+          "S0.P1"
+        ]
+      },
+      "evidence": {
+        "text": "样机满载效率 94%，比固定死区高两个百分点。",
+        "refs": [
+          "S0.P1"
+        ]
+      },
+      "rebuttal": {
+        "text": "作者承认只测了一台样机。",
+        "refs": [
+          "S2.P1"
+        ]
+      },
+      "conclusion": {
+        "text": "方法有效，但适用范围有待验证。",
+        "refs": [
+          "S2"
+        ]
+      }
+    },
+    "thesis": {
+      "zh": "逐周期自适应死区能提高小型降压变换器的效率。"
+    },
+    "strongest": {
+      "text": "损耗机理与公式 (1) 直接对应，改进点明确。",
+      "refs": [
+        "S1.E1"
+      ]
+    },
+    "weakest": {
+      "text": "只有一台样机、一个温度点，结论外推性弱。",
+      "refs": [
+        "S2.P1"
+      ]
+    },
+    "claims": [
+      {
+        "claim": "效率提高两个百分点",
+        "evidence": "单台样机满载测量",
+        "strength": "weak",
+        "refs": [
+          "S0.P1"
+        ]
+      }
+    ]
+  },
+  "overview_final": true
+}

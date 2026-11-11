@@ -15,3 +15,10 @@ papers/todo/*
 papers/done/*
 !papers/todo/.gitkeep
 !papers/done/.gitkeep
+
+# 本机 Agent 的工作记录
+.workbuddy/
+.codex/
+
+# 测试用的自编示例论文
+!tests/fixture/*_work/

@@ -1,0 +1,67 @@
+{
+  "proofread": true,
+  "meta": {
+    "title": "A Toy Converter with Adaptive Dead-Time Control",
+    "authors": "A. Example, B. Sample",
+    "venue": "Synthetic Test Journal",
+    "year": "2026",
+    "doi": "",
+    "pdf": "sample.pdf",
+    "front_text": ""
+  },
+  "sections": [
+    {
+      "id": "S0",
+      "title": "Abstract",
+      "level": 1,
+      "items": [
+        {
+          "id": "S0.P1",
+          "kind": "para",
+          "page": 1,
+          "text": "This synthetic paper proposes an adaptive dead-time controller for a small buck converter. A bench prototype reaches an efficiency of 94 percent at full load, two points above a fixed dead-time baseline."
+        },
+        {
+          "id": "S0.K1",
+          "kind": "keywords",
+          "page": 1,
+          "text": "Keywords: buck converter, dead time, efficiency"
+        }
+      ]
+    },
+    {
+      "id": "S1",
+      "title": "I. INTRODUCTION",
+      "level": 1,
+      "items": [
+        {
+          "id": "S1.P1",
+          "kind": "para",
+          "page": 1,
+          "text": "Fixed dead time wastes energy because the body diode conducts longer than needed at light load. We therefore measure the switching node and shorten the dead time cycle by cycle."
+        },
+        {
+          "id": "S1.E1",
+          "kind": "equation",
+          "page": 1,
+          "number": "1",
+          "raw": "P_loss = V_f I t_d f_s (1)",
+          "latex": ""
+        }
+      ]
+    },
+    {
+      "id": "S2",
+      "title": "II. CONCLUSION",
+      "level": 1,
+      "items": [
+        {
+          "id": "S2.P1",
+          "kind": "para",
+          "page": 2,
+          "text": "The controller improves efficiency on one prototype, but it was not tested across temperature or with other power devices."
+        }
+      ]
+    }
+  ]
+}
