@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: engineering-paper-design-profile
+expected_outcome: |
+  A single self-contained .annotated.html for the IEEE Marx-generator paper, built by the skill's
+  build_html.py with 0 errors. The design (设计验证型) profile is chosen, so the legend reads
+  核心主张与贡献 / 关键术语与参数 / 实验与测量数据 / 局限、权衡与对比 / 设计与实验方法.
+  The header shows the course "脉冲功率技术 · 第 6 周文献精读". Every body paragraph has highlights,
+  a fluent Chinese translation and a four-part note; Ω symbols are restored (no ⟨?⟩), equation (1)
+  has LaTeX, figure crops are clean. The overview names the 8 ns vs 5 ns rise-time shortfall
+  (or an equally specific gap) as a weak point. The file stays local and is not published.
+context:
+  scaffold_script: place-files.sh

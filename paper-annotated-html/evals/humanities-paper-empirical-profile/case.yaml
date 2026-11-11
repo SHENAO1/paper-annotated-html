@@ -1,0 +1,12 @@
+schema_version: "1.1"
+name: humanities-paper-empirical-profile
+expected_outcome: |
+  A single self-contained .annotated.html for the fairy-tale values paper (German / Italian /
+  Portuguese, Word2Vec with a compass), built by build_html.py with 0 errors. The empirical
+  (实证型) profile is chosen and the choice is explained. The keywords line is treated as keywords,
+  not as an annotated body section; acknowledgments and references are left out. Translations keep
+  the authors' hedging ("preliminary findings hint at" is not rendered as 证明/证实). Notes point out
+  concrete validity issues such as corpus size/representativeness or word-embedding distance as a
+  proxy for values. The file stays local and is not published.
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,11 @@
+# 论文 PDF 有版权，不进仓库
+*.pdf
+
+# 运行产物
+*_work/
+/*.html
+output/
+*-workspace/
+__pycache__/
+.DS_Store
+dist/

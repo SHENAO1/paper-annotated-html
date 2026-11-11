@@ -1,0 +1,61 @@
+{
+  "_comment": "Five highlight colours are fixed; what each colour means depends on the paper's genre. Stage keys are fixed too (problem/claim/evidence/rebuttal/conclusion), only their labels change. Meanings are explained in references/dimensions.md.",
+  "colors": ["yellow", "red", "blue", "green", "purple"],
+  "stages": ["problem", "claim", "evidence", "rebuttal", "conclusion"],
+  "profiles": {
+    "argument": {
+      "name": "论证型",
+      "hint": "人文、理论、哲学、政策评论、综述性论证",
+      "labels": {
+        "yellow": "核心论点",
+        "red": "关键概念",
+        "blue": "证据与例证",
+        "green": "让步与反驳",
+        "purple": "方法与论证路径"
+      },
+      "stages": {
+        "problem": "问题",
+        "claim": "论点",
+        "evidence": "证据",
+        "rebuttal": "反驳",
+        "conclusion": "结论"
+      }
+    },
+    "empirical": {
+      "name": "实证型",
+      "hint": "社会科学、自然科学、计算人文、带数据分析的 CS 论文",
+      "labels": {
+        "yellow": "研究问题与核心发现",
+        "red": "关键概念与构念",
+        "blue": "数据与结果",
+        "green": "局限与替代解释",
+        "purple": "研究设计与方法"
+      },
+      "stages": {
+        "problem": "问题",
+        "claim": "假设 / 主张",
+        "evidence": "方法与证据",
+        "rebuttal": "局限与回应",
+        "conclusion": "结论"
+      }
+    },
+    "design": {
+      "name": "设计验证型",
+      "hint": "工程、硬件、电路、系统、算法设计与实验验证",
+      "labels": {
+        "yellow": "核心主张与贡献",
+        "red": "关键术语与参数",
+        "blue": "实验与测量数据",
+        "green": "局限、权衡与对比",
+        "purple": "设计与实验方法"
+      },
+      "stages": {
+        "problem": "需求 / 问题",
+        "claim": "方案 / 主张",
+        "evidence": "设计与验证",
+        "rebuttal": "局限与权衡",
+        "conclusion": "结论"
+      }
+    }
+  }
+}
