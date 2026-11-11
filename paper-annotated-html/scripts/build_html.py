@@ -26,6 +26,7 @@ import json
 import re
 import sys
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -553,6 +554,13 @@ def build(work: Path, out: Path | None, allow_partial: bool, sections_spec: str 
         out = work.parent / f"{slug}.annotated.html"
     if not errors or allow_partial:
         out.write_text(page, encoding="utf-8")
+    marker = work / "built.json"
+    if not errors and not allow_partial and not sections_spec:
+        # a full, error-free build: organize_papers.py uses this to file the paper under done/
+        marker.write_text(json.dumps({"html": out.name, "built_at": datetime.now().isoformat(timespec="seconds")},
+                                     ensure_ascii=False, indent=2), encoding="utf-8")
+    elif allow_partial and marker.exists() and json.loads(marker.read_text(encoding="utf-8")).get("html") == out.name:
+        marker.unlink()   # the preview just overwrote the finished build
     return errors, warnings, out
 
 

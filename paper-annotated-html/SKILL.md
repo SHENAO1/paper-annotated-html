@@ -43,6 +43,9 @@ description: 把一篇学术论文（PDF）做成单个双栏批注精读 HTML�
   - `--check`：只校验；
   - 不加参数：正式构建；
   - `--allow-partial --sections`：预览部分章节。
+
+  正式构建（无错误、不带 `--allow-partial` / `--sections`）成功后，会在工作目录里写 `built.json`，记下生成的 HTML 文件名，作为"已完成"的标记。
+- `scripts/organize_papers.py LIBRARY [--dry-run]`：整理论文库，把论文分成 `done/`（已用本技能完成）和 `todo/`（未完成）两部分，见第 7 步。
 - `assets/profiles.json`：三种体裁的图例文字。
 - `assets/template.html`：页面模板。
 - `references/`：
@@ -59,7 +62,7 @@ description: 把一篇学术论文（PDF）做成单个双栏批注精读 HTML�
 
 ### 0. 确认输入
 
-- 找到 PDF。如果用户只给了文件名，就在当前目录里找。
+- 找到 PDF。如果用户只给了文件名，就在当前目录里找；当前目录下有 `papers/` 论文库时，也到 `papers/todo/` 里找。
 - **已有工作目录就续做**：如果 PDF 旁边已经有 `<slug>_work/`，先运行 `--status`，从 `NEXT:` 指出的步骤继续，不要重新抽取（重新抽取会覆盖校对结果）。
 - **课程信息**：用户提到了就写进 `meta.json` 的 `course`；没提到就留空。
 - **范围**：默认处理正文全部章节。参考文献、致谢、基金信息、作者简介、附录不做批注，校对时直接删掉；附录除非用户要求才保留。
@@ -147,11 +150,19 @@ python $SKILL/scripts/build_html.py WORK          # 默认输出 <pdf目录>/<�
   - 总览的链接能跳转；
   - 窄屏下是单栏。
 
-### 7. 交付
+### 7. 归档与交付
+
+**归档**：如果 PDF 在论文库里（所在目录是 `todo/`，或者它的上一级目录里同时有 `todo/` 和 `done/`），构建成功后运行：
+
+```bash
+python $SKILL/scripts/organize_papers.py <论文库目录>
+```
+
+脚本会把这篇论文的 PDF、工作目录和 HTML 一起移到 `done/<slug>/`，散放在库根目录的新 PDF 归入 `todo/`，最后列出两部分各有哪些论文。PDF 不在论文库里就跳过这一步。
 
 告诉用户以下几件事：
 
-- 输出文件的路径；
+- 输出文件的路径（归档过的话是 `done/` 里的新路径）；
 - 选了哪种体裁及理由；
 - 篇幅统计（几段、几张图）；
 - 两三条最值得注意的发现，比如最弱处；

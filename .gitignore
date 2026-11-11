@@ -9,3 +9,9 @@ output/
 __pycache__/
 .DS_Store
 dist/
+
+# 论文库：只保留目录结构，论文、工作目录和生成的 HTML 都不入库
+papers/todo/*
+papers/done/*
+!papers/todo/.gitkeep
+!papers/done/.gitkeep
