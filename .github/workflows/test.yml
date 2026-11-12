@@ -13,12 +13,12 @@ jobs:
         os: [ubuntu-latest, windows-latest, macos-latest]
         python: ["3.13"]
         include:
-          - os: ubuntu-latest
+          - os: ubuntu-24.04      # ubuntu-latest (26.04) has no Python 3.9 build
             python: "3.9"
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: ${{ matrix.python }}
       - run: pip install -r paper-annotated-html/requirements.txt
